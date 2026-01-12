@@ -1,0 +1,64 @@
+body {
+	font-family: sans-serif;
+}
+
+.fieldset {
+	display: inline-block;
+  padding: 15px 10px 10px 10px;
+  max-width: 330px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.fieldset__title {
+	margin: 0 0 10px 0;
+}
+
+.label {
+	display: block;
+  margin-bottom: 10px;
+}
+
+.input {
+	display: block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  max-width: 250px;
+  width: 100%;
+}
+
+  .fieldset-textarea {
+    border: none;
+    padding: 0;
+  }
+
+.textarea {
+	display: block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  resize: vertical;
+  max-height: 190px;
+  min-height: 20px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  max-width: 250px;
+  width: 100%;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-size: 14px;
+}
+
+.button {
+	display: block;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
