@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* выравнивание формы по центру экрана */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	font-family: sans-serif;
+  /* чтобы контент всегда находился по высоте в середине экрана */
+  min-height: 100vh; 
+}
+
+.form {
+  border: 1px solid #333;
+  border-radius: 6px;
+  /* чтобы форма расширялась на макс ширину width 100% */
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+}
+
+.form-group {
+  border: none;
+	padding: 0;
+}
+
+.form-group__title {
+	font-weight: 700;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.label {
+  /* чтобы лейблы не растягивались на все окно и занимали размер контента, на чекбокс можно нажать не в любом месте строки, а только в квадрат */
+	display: inline-block;
+  margin-bottom: 10px;
+}
+
+.textarea {
+  max-height: 150px;
+  min-height: 30px;
+	resize: vertical;
+}
+
+.input,
+.textarea {
+  border: 1px solid #333;
+  border-radius: 6px;
+  width: 100%;
+  padding: 5px 12px;
+	margin-bottom: 20px;
+  /* при фокусировке и табуляции нет встроенного выделения инпута */
+  outline: none;
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.5;
+}
+
+.checkbox-label {
+  /* к ширине псевдоэлемента кастомного чекбокса прибавляет несколько пикселей, чтобы было расстояние между ним и лейблом */
+  padding-left: 22px;
+}
+
+.checkbox {
+  position: absolute;
+  appearance: none;
+  /* в некоторых браузерах без outline nine будет видна фокусировка в виде синей точки */
+  outline: none;
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  /* margin-left отрицательный, равный значению padding-left для лейбла */
+  margin-left: -22px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Когда у скрытого чекбокса будет состояние checked, тогда для псевдоэлемента after будем добавлять состояние, н-р иконку. Т.к. иконка прозрачная, указываем для нее фон через запятую */
+.checkbox:checked::after {
+  background: url("../images/check-icon.svg") no-repeat center, #9e1fff;
+}
+
+.checkbox-text {
+  font-size: 14px;
+}
+
+.button {
+	border: none;
+  border-radius: 6px;
+  padding: 6px 18px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #9e1fff;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.button:not(:disabled):active {
+  background-color: #8719db;
+}
+
+.button:disabled,
+.checkbox:disabled::after {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input:focus-visible,
+.textarea:focus-visible,
+.checkbox:focus-visible::after,
+.button:focus-visible {
+  /* внешняя обводка элементов */
+  outline: 2px solid #9e1fff;
+  /* отступ от элементов до обводки, если не делать outline-offset кнопка при фокусировке с клавиатуры увеличивается визуально, нет эффекта обводки */
+  outline-offset: 1px;
+}
