@@ -41,21 +41,21 @@
 	bottom: 136px;
 }
 
-.article-list {
+.trainings__list {
 	margin-top: 0;
 	padding-left: 16px;
 }
 
-.article-item:not(:last-child) {
+.trainings__item:not(:last-child) {
 	margin-bottom: 12px;
 }
 
-.article-item::marker {
+.trainings__item::marker {
 	color: #3596ed;
 	font-size: 21px;
 }
 
-.article-play-button {
+.video-review__button {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -82,11 +82,11 @@
 	transition: background-color 0.2s;
 }
 
-.article-play-button:hover {
+.video-review__button:hover {
 	background-color: #3aa1fb;
 }
 
-.article-play-button:not(:disabled):active {
+.video-review__button:not(:disabled):active {
 	background-color: #2c7ec5;
 }
 
@@ -122,12 +122,12 @@
 		margin-bottom: 30px;
 	}
 
-	.article-play-button {
+	.video-review__button {
 		width: 50px;
 		height: 50px;
 	}
 
-	.article-play-button img {
+	.video-review__button-img {
 		width: 18px;
 		height: 18px;
 	}
